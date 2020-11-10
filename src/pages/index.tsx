@@ -1,11 +1,8 @@
 import Head from 'next/head';
-import styles from '../styles/Home.module.css';
+import styles from '../../styles/Home.module.css';
 import Link from 'next/link';
 
-interface IPeople {
-  v: string;
-  name: string;
-}
+import { IPeople } from '~/interfaces/person';
 
 export default function Home() {
   const people: IPeople[] = [
@@ -13,6 +10,7 @@ export default function Home() {
     { v: 'BMW X6', name: 'Olesya' },
     { v: 'Porche Cayene', name: 'Vasya' },
   ];
+
   return (
     <div className={styles.container}>
       <Head>
