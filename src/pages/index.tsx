@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import styles from '../../styles/Home.module.css';
+import cstyles from '~/scss/index.module.scss';
 import Link from 'next/link';
 
 import { IPeople } from '~/interfaces/person';
@@ -20,7 +21,7 @@ export default function Home() {
 
       <main className={styles.main}>
         <h1 className={styles.title}>Welcome to my stydy next js project</h1>
-        <ul>
+        <ul className={cstyles.indexUl}>
           {people.map((person: IPeople) => (
             <li key={person.name}>
               <Link href={`/${person.v}/${person.name}`}>
@@ -29,9 +30,6 @@ export default function Home() {
             </li>
           ))}
         </ul>
-        <Link href="[aston]/[vladimir]" as="/astonMartini/vladimir">
-          Aston page
-        </Link>
       </main>
 
       <footer className={styles.footer}></footer>
