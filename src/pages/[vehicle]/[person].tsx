@@ -2,7 +2,6 @@ import { useRouter } from 'next/router';
 
 export default function Person() {
   const router = useRouter();
-  console.log(router);
   const { vehicle, person } = router.query;
   return (
     <div>
