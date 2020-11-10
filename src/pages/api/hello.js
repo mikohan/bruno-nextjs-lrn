@@ -3,11 +3,10 @@ import { vehicles } from '~/pages/api/data/vehicles';
 
 export default (req, res) => {
   console.log(req.query);
-  if (req.query.length !== 0) {
+  if (Object.keys(req.query).length !== 0) {
     const id = req.query.id;
     const v = vehicles.find((v) => v.id === +id);
     res.statusCode = 200;
-    console.log(v);
     res.json(v);
   } else {
     res.statusCode = 200;
