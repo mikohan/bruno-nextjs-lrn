@@ -7,11 +7,12 @@ export default function Person(props) {
   const router = useRouter();
   /* const { vehicle, person } = router.query; */
   const [data, setData] = useState(props.data);
-  const { vehicle, person, details } = data;
+  const { vehicle, ownerName, details } = data;
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     async function loadData() {
+      console.log('Im in client side');
       const response = await fetch(
         `http://localhost:3000/api/hello?person=${router.query.person}`
       );
@@ -31,7 +32,7 @@ export default function Person(props) {
       ) : (
         <div>
           <h1>
-            Person: {person} Has a car: {vehicle}
+            Person: {ownerName} Has a car: {vehicle}
           </h1>
           <p>{details}</p>
         </div>
@@ -41,6 +42,7 @@ export default function Person(props) {
 }
 
 Person.getInitialProps = async (ctx) => {
+  console.log('Im in server side');
   if (!ctx.req) {
     return { data: {} };
   }
