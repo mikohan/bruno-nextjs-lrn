@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "./src/tests/database-test.js && next dev",
+    "dev": "node ./src/tests/database-test.js && next dev",
     "build": "next build",
     "start": "next start"
   },
