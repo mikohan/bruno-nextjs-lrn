@@ -1134,6 +1134,38 @@
   dependencies:
     mkdirp "^1.0.4"
 
+"@sqlight/better-sqlite3@^1.0.0-alpha.8":
+  version "1.0.0-alpha.8"
+  resolved "https://registry.yarnpkg.com/@sqlight/better-sqlite3/-/better-sqlite3-1.0.0-alpha.8.tgz#640083b3c99d446119c48261e7fb72e4be279122"
+  integrity sha512-9C+O73ZCAEY5J520XAAheHh7tIrASMGNqLmM7q9+ltRJtwIRmSEZfYw8O7/ONIyWhOZ3da2wlxRA5+7bnB0r/w==
+  dependencies:
+    "@sqlight/core" "^1.0.0-alpha.7"
+
+"@sqlight/core@^1.0.0-alpha.7":
+  version "1.0.0-alpha.7"
+  resolved "https://registry.yarnpkg.com/@sqlight/core/-/core-1.0.0-alpha.7.tgz#cbadf5080598b2417e4eb9abc19afa236bd21e07"
+  integrity sha512-wYLYYuDqvXjyLAFGgWZHUne9XC5qkPHLArL07w17EosgYBxihd0zpJZL+cDsLrgkJ2iQYZjk7U6KnxTwjAE18w==
+  dependencies:
+    "@sqlight/types" "^1.0.0-alpha.7"
+    "@types/shortid" "^0.0.29"
+    "@types/uuid" "^3.4.4"
+    colors "^1.3.3"
+    events "^3.0.0"
+    shortid "^2.2.14"
+    uuid "^3.3.2"
+
+"@sqlight/expo@^1.0.0-alpha.8":
+  version "1.0.0-alpha.8"
+  resolved "https://registry.yarnpkg.com/@sqlight/expo/-/expo-1.0.0-alpha.8.tgz#d41248c9a48843310546fadd3a46316514fac82f"
+  integrity sha512-QwTUY1nkMFM7ne4G9B3oHu/MromIgwpa2E/jMQB0VKJcLNN1SXZFrVEeZA/MeCyb86DZWZPLJ2M75Ert+CY7Qg==
+  dependencies:
+    "@sqlight/core" "^1.0.0-alpha.7"
+
+"@sqlight/types@^1.0.0-alpha.7":
+  version "1.0.0-alpha.7"
+  resolved "https://registry.yarnpkg.com/@sqlight/types/-/types-1.0.0-alpha.7.tgz#a953351fa923c6911aeb5ad6b0ce31c68bfdcd4f"
+  integrity sha512-6zC+648g7fTWFZbcBMZqTWq6UZnPEKF+ae0jcGqpblERwZDYih5BDzWJDDWh8lWhkiVRI329Ap3KbuwC7Ahagg==
+
 "@types/json-schema@^7.0.5":
   version "7.0.6"
   resolved "https://registry.yarnpkg.com/@types/json-schema/-/json-schema-7.0.6.tgz#f4c7ec43e81b319a9815115031709f26987891f0"
@@ -1156,6 +1188,16 @@
   dependencies:
     "@types/prop-types" "*"
     csstype "^3.0.2"
+
+"@types/shortid@^0.0.29":
+  version "0.0.29"
+  resolved "https://registry.yarnpkg.com/@types/shortid/-/shortid-0.0.29.tgz#8093ee0416a6e2bf2aa6338109114b3fbffa0e9b"
+  integrity sha1-gJPuBBam4r8qpjOBCRFLP7/6Dps=
+
+"@types/uuid@^3.4.4":
+  version "3.4.9"
+  resolved "https://registry.yarnpkg.com/@types/uuid/-/uuid-3.4.9.tgz#fcf01997bbc9f7c09ae5f91383af076d466594e1"
+  integrity sha512-XDwyIlt/47l2kWLTzw/mtrpLdB+GPSskR2n/PIcPn+VYhVO77rGhRncIR5GPU0KRzXuqkDO+J5qqrG0Y8P6jzQ==
 
 "@webassemblyjs/ast@1.9.0":
   version "1.9.0"
@@ -2003,6 +2045,11 @@ colorette@^1.2.1:
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/colorette/-/colorette-1.2.1.tgz#4d0b921325c14faf92633086a536db6e89564b1b"
   integrity sha512-puCDz0CzydiSYOrnXpz/PKd69zRrribezjtE9yd4zvytoRc8+RY/KJPvtPFKZS3E3wP6neGyMe0vOTlHO5L3Pw==
+
+colors@^1.3.3:
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/colors/-/colors-1.4.0.tgz#c50491479d4c1bdaed2c9ced32cf7c7dc2360f78"
+  integrity sha512-a+UqTh4kgZg/SlGvfbzDHpgRu7AAQOmmqRHJnxhRZICKFUT91brVhNNt58CMWU9PsBbv3PDCZUHbVxuDiH2mtA==
 
 commander@^2.20.0:
   version "2.20.3"
@@ -3574,6 +3621,11 @@ nan@^2.12.1:
   resolved "https://registry.yarnpkg.com/nan/-/nan-2.14.2.tgz#f5376400695168f4cc694ac9393d0c9585eeea19"
   integrity sha512-M2ufzIiINKCuDfBSAUr1vWQ+vuVcA9kqx8JJUsbQi6yf1uGRyb7HfpdfUr5qLXf3B/t8dPvcjhKMmlfnP47EzQ==
 
+nanoid@^2.1.0:
+  version "2.1.11"
+  resolved "https://registry.yarnpkg.com/nanoid/-/nanoid-2.1.11.tgz#ec24b8a758d591561531b4176a01e3ab4f0f0280"
+  integrity sha512-s/snB+WGm6uwi0WjsZdaVcuf3KJXlfGl2LcxgwkEwJF0D/BWzVWAZW/XY4bFaiR7s0Jk3FPvlnepg1H1b1UwlA==
+
 nanoid@^3.1.12:
   version "3.1.16"
   resolved "https://registry.yarnpkg.com/nanoid/-/nanoid-3.1.16.tgz#b21f0a7d031196faf75314d7c65d36352beeef64"
@@ -4590,6 +4642,13 @@ shell-quote@1.7.2:
   resolved "https://registry.yarnpkg.com/shell-quote/-/shell-quote-1.7.2.tgz#67a7d02c76c9da24f99d20808fcaded0e0e04be2"
   integrity sha512-mRz/m/JVscCrkMyPqHc/bczi3OQHkLTqXHEFu0zDhK/qfv3UcOA4SVmRCLmos4bhjr9ekVQubj/R7waKapmiQg==
 
+shortid@^2.2.14:
+  version "2.2.16"
+  resolved "https://registry.yarnpkg.com/shortid/-/shortid-2.2.16.tgz#b742b8f0cb96406fd391c76bfc18a67a57fe5608"
+  integrity sha512-Ugt+GIZqvGXCIItnsL+lvFJOiN7RYqlGy7QE41O3YC1xbNSeDGIRO7xg2JJXIAj1cAGnOeC1r7/T9pgrtQbv4g==
+  dependencies:
+    nanoid "^2.1.0"
+
 signal-exit@^3.0.0:
   version "3.0.3"
   resolved "https://registry.yarnpkg.com/signal-exit/-/signal-exit-3.0.3.tgz#a1410c2edd8f077b08b4e253c8eacfcaf057461c"
@@ -4712,6 +4771,15 @@ split-string@^3.0.1, split-string@^3.0.2:
   integrity sha512-NzNVhJDYpwceVVii8/Hu6DKfD2G+NrQHlS/V/qgv763EYudVwEcMQNxd2lh+0VrUByXN/oJkl5grOhYWvQUYiw==
   dependencies:
     extend-shallow "^3.0.0"
+
+sqlight@^1.0.0-alpha.8:
+  version "1.0.0-alpha.8"
+  resolved "https://registry.yarnpkg.com/sqlight/-/sqlight-1.0.0-alpha.8.tgz#585e6a93f8da963fb6a238e157f56896d66d497e"
+  integrity sha512-aPaAW7OGIGR2Hb8vw3716KOkLeRS6Q53iZfJzNicbOwmv0bmK6ObTyWgf153WHN+pCTSivRH2+/Cn6nDYDWKoA==
+  dependencies:
+    "@sqlight/better-sqlite3" "^1.0.0-alpha.8"
+    "@sqlight/core" "^1.0.0-alpha.7"
+    "@sqlight/expo" "^1.0.0-alpha.8"
 
 ssri@^6.0.1:
   version "6.0.1"
@@ -5199,6 +5267,11 @@ util@^0.11.0:
   integrity sha512-HShAsny+zS2TZfaXxD9tYj4HQGlBezXZMZuM/S5PKLLoZkShZiGk9o5CzukI1LVHZvjdvZ2Sj1aW/Ndn2NB/HQ==
   dependencies:
     inherits "2.0.3"
+
+uuid@^3.3.2:
+  version "3.4.0"
+  resolved "https://registry.yarnpkg.com/uuid/-/uuid-3.4.0.tgz#b23e4358afa8a202fe7a100af1f5f883f02007ee"
+  integrity sha512-HjSDRw6gZE5JMggctHBcjVak08+KEVhSIiDzFnT9S9aegmp85S/bReBVTb4QTFaRNptJ9kuYaNhnbNEOkbKb/A==
 
 vm-browserify@1.1.2, vm-browserify@^1.0.1:
   version "1.1.2"
