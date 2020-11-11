@@ -7,7 +7,7 @@ export const getStaticProps: GetStaticProps = async (
   context: GetStaticPropsContext
 ) => {
   const res = await fetch(`http://localhost:3000/api/hello`);
-  const data = await res.json();
+  const data: IVehicles[] | undefined = await res.json();
 
   return {
     props: {

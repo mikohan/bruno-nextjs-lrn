@@ -1,9 +1,13 @@
-import { GetStaticProps, GetStaticPaths } from 'next';
+import { NextPageContext } from 'next';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
-/* import { IVehicles } from '~/interfaces/vehicles'; */
+import { IVehicles } from '~/interfaces/vehicles';
 
-export default function Person(props) {
+interface PersonProps {
+  data: IVehicles;
+}
+
+export default function Person(props: PersonProps) {
   const router = useRouter();
   /* const { vehicle, person } = router.query; */
   const [data, setData] = useState(props.data);
@@ -16,7 +20,7 @@ export default function Person(props) {
       const response = await fetch(
         `http://localhost:3000/api/hello?person=${router.query.person}`
       );
-      const d = await response.json();
+      const d: IVehicles = await response.json();
       setData(d);
       setLoading(false);
     }
@@ -41,8 +45,7 @@ export default function Person(props) {
   );
 }
 
-Person.getInitialProps = async (ctx) => {
-  console.log('Im in server side');
+Person.getInitialProps = async (ctx: NextPageContext) => {
   if (!ctx.req) {
     return { data: {} };
   }
@@ -50,7 +53,7 @@ Person.getInitialProps = async (ctx) => {
   const response = await fetch(
     `http://localhost:3000/api/hello?person=${query.person}`
   );
-  const data = await response.json();
+  const data: IVehicles = await response.json();
 
   return { data: data };
 };
