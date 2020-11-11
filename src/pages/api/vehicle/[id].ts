@@ -1,5 +1,13 @@
 import { NextApiResponse, NextApiRequest } from 'next';
+import { dbOpen } from '~/pages/api/dbopen';
 
-export default function getVehicle(req: NextApiRequest, res: NextApiResponse) {
-  res.json({ hello: req.query.id, method: req.method });
+export default async function getVehicle(
+  req: NextApiRequest,
+  res: NextApiResponse
+) {
+  const db = await dbOpen();
+  const vehicles = await db.all(`SELECT * FROM Vehicle WHERE id = ?`, [
+    req.query.id,
+  ]);
+  res.json(vehicles);
 }
