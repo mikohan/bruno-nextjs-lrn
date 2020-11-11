@@ -6,7 +6,7 @@ export default async function getVehicle(
   res: NextApiResponse
 ) {
   const db = await dbOpen();
-  const vehicles = await db.all(`SELECT * FROM Vehicle WHERE id = ?`, [
+  const vehicles = await db.get(`SELECT * FROM Vehicle WHERE id = ?`, [
     req.query.id,
   ]);
   res.json(vehicles);

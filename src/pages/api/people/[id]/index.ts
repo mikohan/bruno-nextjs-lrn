@@ -1,8 +1,13 @@
 import { NextApiResponse, NextApiRequest } from 'next';
+import { dbOpen } from '~/pages/api/dbopen';
 
-export default function getPeople(req: NextApiRequest, res: NextApiResponse) {
-  res.json([
-    { hello: 'People list here', method: req.method },
-    { name: 'nonemej' },
+export default async function getPerson(
+  req: NextApiRequest,
+  res: NextApiResponse
+) {
+  const db = await dbOpen();
+  const person = await db.get(`SELECT * FROM Person WHERE id = ?`, [
+    req.query.id,
   ]);
+  res.json(person);
 }
