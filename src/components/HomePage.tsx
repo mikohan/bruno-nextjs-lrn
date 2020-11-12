@@ -21,25 +21,25 @@ export default function HomePage() {
       <CssBaseline />
       <Container maxWidth="sm">
         <List component="nav" aria-label="main mailbox folders">
-          <ListItem button>
-            <ListItemIcon>
-              <InboxIcon />
-            </ListItemIcon>
-            <ListItemText primary="Inbox" />
-          </ListItem>
-          <ListItem button>
-            <ListItemIcon>
-              <DraftsIcon />
-            </ListItemIcon>
-            <ListItemText primary="Drafts" />
-          </ListItem>
+          <Link href="/list">
+            <ListItem button>
+              <ListItemIcon>
+                <InboxIcon />
+              </ListItemIcon>
+              <ListItemText primary="Inbox" />
+            </ListItem>
+          </Link>
+          <Divider />
+          <Link href="/vehicles">
+            <ListItem button>
+              <ListItemIcon>
+                <DraftsIcon />
+              </ListItemIcon>
+              <ListItemText primary="VEHICLES" />
+            </ListItem>
+          </Link>
         </List>
         <Divider />
-        <List component="nav" aria-label="secondary mailbox folders">
-          <ListItem button>
-            <ListItemText primary="Trash" />
-          </ListItem>
-        </List>
       </Container>
     </React.Fragment>
   );
