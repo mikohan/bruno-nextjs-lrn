@@ -7,7 +7,7 @@ export default async function getPerson(
 ) {
   const db = await dbOpen();
 
-  if ((req.method = 'PUT')) {
+  if (req.method === 'PUT') {
     const statement = await db.prepare(`UPDATE Person SET name = ?, email = ? WHERE
                                        id = ?`);
     const result = await statement.run(
