@@ -3,22 +3,21 @@ import Head from 'next/head';
 import styles from '../../styles/Home.module.css';
 import Link from 'next/link';
 
+import CssBaseline from '@material-ui/core/CssBaseline';
+import Typography from '@material-ui/core/Typography';
+import Container from '@material-ui/core/Container';
+import { createStyles, Theme, makeStyles } from '@material-ui/core/styles';
+import List from '@material-ui/core/List';
+import ListItem, { ListItemProps } from '@material-ui/core/ListItem';
+import ListItemIcon from '@material-ui/core/ListItemIcon';
+import ListItemText from '@material-ui/core/ListItemText';
+import Divider from '@material-ui/core/Divider';
+
 export default function HomePage() {
   return (
-    <div className={styles.container}>
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.png" />
-      </Head>
-
-      <main className={styles.main}>
-        <h1 className={styles.title}>Welcome to my stydy next js project</h1>
-        <Link href="/list">
-          <h4>Go to vehicle list</h4>
-        </Link>
-      </main>
-
-      <footer className={styles.footer}></footer>
-    </div>
+    <React.Fragment>
+      <CssBaseline />
+      <Container maxWidth="sm"></Container>
+    </React.Fragment>
   );
 }
