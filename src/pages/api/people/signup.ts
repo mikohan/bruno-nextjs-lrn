@@ -16,7 +16,9 @@ export default async function signUp(
       const result = await statement.run(req.body.name, req.body.email, hash);
       await statement.finalize();
 
-      const person = await db.get(`SELECT * FROM Person `, [req.query.id]);
+      const person = await db.get(`SELECT id, name, email FROM Person `, [
+        req.query.id,
+      ]);
       res.json(person);
     });
   } else {
