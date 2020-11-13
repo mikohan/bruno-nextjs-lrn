@@ -9,6 +9,8 @@ import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import { IVehicle } from '~/interfaces/vehicles';
 
+import { __appUrl__ } from '~/config';
+
 const useStyles = makeStyles({
   table: {
     minWidth: 650,
@@ -48,7 +50,7 @@ export default function Vehicles({ vehicles }: VehiclesProps) {
 }
 
 Vehicles.getInitialProps = async () => {
-  const response = await fetch('http://localhost:3000/api/vehicles');
+  const response = await fetch(`${__appUrl__}/api/vehicles`);
   const json = await response.json();
   return {
     vehicles: json,

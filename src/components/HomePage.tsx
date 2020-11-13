@@ -26,7 +26,7 @@ export default function HomePage() {
               <ListItemIcon>
                 <InboxIcon />
               </ListItemIcon>
-              <ListItemText primary="Inbox" />
+              <ListItemText primary="List of old stuff" />
             </ListItem>
           </Link>
           <Divider />
