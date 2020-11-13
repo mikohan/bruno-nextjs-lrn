@@ -6,10 +6,7 @@ export const authenticated = (fn: NextApiHandler) => async (
   req: NextApiRequest,
   res: NextApiResponse
 ) => {
-  jwt.verify(req.headers.authorization!, __secret__, async function (
-    err,
-    decoded
-  ) {
+  jwt.verify(req.cookies.auth!, __secret__, async function (err, decoded) {
     if (!err && decoded) {
       return await fn(req, res);
     }
