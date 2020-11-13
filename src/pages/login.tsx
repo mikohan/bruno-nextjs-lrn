@@ -1,10 +1,11 @@
+import React from 'react';
 import { useRef } from 'react';
 import Grid from '@material-ui/core/Grid';
 import TextField from '@material-ui/core/TextField';
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
-import Container from '@material-ui/core/Container';
 import { Typography } from '@material-ui/core';
+import GridLayout from '~/components/Grid';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -32,46 +33,41 @@ export default function Login() {
   }
 
   return (
-    <Grid
-      container
-      spacing={0}
-      direction="column"
-      alignItems="center"
-      justify="center"
-      className={classes.mainGrid}
-    >
-      <Grid item xs={4}>
-        {' '}
-        <Typography variant="h4">Login page</Typography>
-      </Grid>
-      <Grid item xs={4} className={classes.root}>
-        <div>
-          <TextField
-            variant="outlined"
-            type="text"
-            placeholder="email"
-            ref={emailRef}
-          />
-        </div>
-        <div>
-          <TextField
-            label="Password"
-            type="password"
-            placeholder="password"
-            variant="outlined"
-            ref={passwordRef}
-          />
-        </div>
-        <div>
-          <Button
-            className={classes.button}
-            variant="outlined"
-            onClick={handleLogin}
-          >
-            Login
-          </Button>
-        </div>
-      </Grid>
-    </Grid>
+    <GridLayout>
+      <React.Fragment>
+        <Grid item xs={4}>
+          {' '}
+          <Typography variant="h4">Login page</Typography>
+        </Grid>
+        <Grid item xs={4} className={classes.root}>
+          <div>
+            <TextField
+              variant="outlined"
+              type="text"
+              placeholder="email"
+              inputRef={emailRef}
+            />
+          </div>
+          <div>
+            <TextField
+              label="Password"
+              type="password"
+              placeholder="password"
+              variant="outlined"
+              inputRef={passwordRef}
+            />
+          </div>
+          <div>
+            <Button
+              className={classes.button}
+              variant="outlined"
+              onClick={handleLogin}
+            >
+              Login
+            </Button>
+          </div>
+        </Grid>
+      </React.Fragment>
+    </GridLayout>
   );
 }
