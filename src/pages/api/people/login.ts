@@ -3,6 +3,7 @@ import { dbOpen } from '~/pages/api/dbopen';
 import { compare } from 'bcrypt';
 import { sign } from 'jsonwebtoken';
 import { __secret__ } from '~/config';
+import cookie from 'cookie';
 
 interface IPerson {
   id: number;
@@ -24,7 +25,16 @@ export default async function login(req: NextApiRequest, res: NextApiResponse) {
         const claims = { sub: person.id, personEmail: person.email };
         const jwt: string = sign(claims, __secret__);
 
-        res.json({ token: jwt });
+        // Starting implement cookies
+        res.setHeader(
+          'Set-Cookie',
+          cookie.serialize('auth', jwt, {
+            httpOnly: true,
+            path: '/',
+          })
+        );
+
+        res.json({ message: `Welcome back to the app!!` });
       } else {
         res.json({ message: `Something went wrong or incorrect password` });
       }
