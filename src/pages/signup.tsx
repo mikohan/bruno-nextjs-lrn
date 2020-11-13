@@ -28,6 +28,7 @@ export default function SignUp() {
   const classes = useStyles();
   const emailRef = useRef<HTMLInputElement>(null);
   const passwordRef = useRef<HTMLInputElement>(null);
+  const nameRef = useRef<HTMLInputElement>(null);
 
   const [message, setMessage] = useState('');
   async function handleLogin() {
@@ -37,6 +38,7 @@ export default function SignUp() {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
+        name: nameRef.current?.value,
         email: emailRef.current?.value,
         password: passwordRef.current?.value,
       }),
@@ -55,6 +57,14 @@ export default function SignUp() {
           <Typography variant="h4">Login page</Typography>
         </Grid>
         <Grid item xs={4} className={classes.root}>
+          <div>
+            <TextField
+              variant="outlined"
+              type="text"
+              placeholder="Name"
+              inputRef={nameRef}
+            />
+          </div>
           <div>
             <TextField
               variant="outlined"
