@@ -1,12 +1,8 @@
 import { NextApiResponse, NextApiRequest } from 'next';
+import { __secret__ } from '~/config';
 import { dbOpen } from '~/pages/api/dbopen';
 
-const authenticated = (fn: NextApiHandler) => async (
-  req: NextApiRequest,
-  res: NextApiResponse
-) => {
-  return await fn(req, res);
-};
+import { authenticated } from '~/pages/api/authentication';
 
 export default authenticated(async function getPeople(
   req: NextApiRequest,

@@ -2,7 +2,7 @@ import { NextApiResponse, NextApiRequest } from 'next';
 import { dbOpen } from '~/pages/api/dbopen';
 import { hash } from 'bcrypt';
 
-export default async function getPerson(
+export default async function signUp(
   req: NextApiRequest,
   res: NextApiResponse
 ) {

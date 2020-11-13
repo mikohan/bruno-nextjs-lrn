@@ -11,10 +11,7 @@ interface IPerson {
   password: string;
 }
 
-export default async function getPerson(
-  req: NextApiRequest,
-  res: NextApiResponse
-) {
+export default async function login(req: NextApiRequest, res: NextApiResponse) {
   const db = await dbOpen();
 
   if (req.method === 'POST') {
