@@ -1,4 +1,5 @@
 import { NextApiRequest, NextApiResponse, NextPageContext } from 'next';
+import Router from 'next/router';
 import { __appUrl__ } from '~/config';
 
 export default function People(props: any) {
@@ -19,6 +20,16 @@ People.getInitialProps = async function (context: NextPageContext) {
       cookie: cookie!,
     },
   });
+
+  if (response.status === 401 && !context.req) {
+    Router.replace('/login');
+  }
+
+  if (response.status === 401 && context.req) {
+    context.res?.writeHead(302, {
+      Location: '/login',
+    });
+  }
 
   const json = await response.json();
   return { people: json };
