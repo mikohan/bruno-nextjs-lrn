@@ -13,7 +13,7 @@ export default function People(props: any) {
 }
 
 People.getInitialProps = async function (context: NextPageContext) {
-  const cookie = context.req!.headers.cookie;
+  const cookie = context.req?.headers.cookie;
 
   const response = await fetch(`${__appUrl__}/api/people`, {
     headers: {
@@ -23,12 +23,15 @@ People.getInitialProps = async function (context: NextPageContext) {
 
   if (response.status === 401 && !context.req) {
     Router.replace('/login');
+    return {};
   }
 
   if (response.status === 401 && context.req) {
     context.res?.writeHead(302, {
-      Location: '/login',
+      Location: `${__appUrl__}/login`,
     });
+    context.res?.end();
+    return;
   }
 
   const json = await response.json();
