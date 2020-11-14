@@ -8,6 +8,8 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import { IVehicle } from '~/interfaces/vehicles';
+import { NextPageContext } from 'next';
+import { getAuthStuff } from '~/helpers';
 
 import { __appUrl__ } from '~/config';
 
@@ -49,10 +51,10 @@ export default function Vehicles({ vehicles }: VehiclesProps) {
   );
 }
 
-Vehicles.getInitialProps = async () => {
-  const response = await fetch(`${__appUrl__}/api/vehicles`);
-  const json = await response.json();
-  return {
-    vehicles: json,
-  };
+Vehicles.getInitialProps = async function (context: NextPageContext) {
+  const vehicles: IVehicle[] = await getAuthStuff(
+    `${__appUrl__}/api/vehicles`,
+    context
+  );
+  return { vehicles: vehicles };
 };
