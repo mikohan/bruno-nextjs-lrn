@@ -13,9 +13,14 @@ export default function People(props: any) {
 }
 
 People.getInitialProps = async function (context: NextPageContext) {
+  const people = await getAuthStuff(`${__appUrl__}/api/people`, context);
+  return people;
+};
+
+async function getAuthStuff(url: string, context: NextPageContext) {
   const cookie = context.req?.headers.cookie;
 
-  const response = await fetch(`${__appUrl__}/api/people`, {
+  const response = await fetch(url, {
     headers: {
       cookie: cookie!,
     },
@@ -36,4 +41,4 @@ People.getInitialProps = async function (context: NextPageContext) {
 
   const json = await response.json();
   return { people: json };
-};
+}
