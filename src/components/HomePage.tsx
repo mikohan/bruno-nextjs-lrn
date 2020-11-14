@@ -21,12 +21,12 @@ export default function HomePage() {
       <CssBaseline />
       <Container maxWidth="sm">
         <List component="nav" aria-label="main mailbox folders">
-          <Link href="/list">
+          <Link href="/people">
             <ListItem button>
               <ListItemIcon>
                 <InboxIcon />
               </ListItemIcon>
-              <ListItemText primary="List of old stuff" />
+              <ListItemText primary="People" />
             </ListItem>
           </Link>
           <Divider />
