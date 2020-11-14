@@ -23,6 +23,8 @@ interface VehiclesProps {
   vehicles: IVehicle[];
 }
 
+// Finished project for now
+
 export default function Vehicles({ vehicles }: VehiclesProps) {
   const classes = useStyles();
   return (
